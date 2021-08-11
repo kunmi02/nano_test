@@ -37,7 +37,7 @@ def add_tax_exempt_to_customer_payment():
   country = request.args.get('county_code')
   swiss_client = Client.query.filter(Client.country == country).all()
   for client in swiss_client:
-    customer_tax_status = stripe.update_customer_status(client.stripe_customer_id, tax_exempt_status)
+    customer_tax_status = stripe.update_customer_status(client.stripe_customer_id, 'none')
     #captures errors here
   return make_success_response("Customer details has been updated")
 

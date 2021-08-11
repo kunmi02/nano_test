@@ -33,3 +33,7 @@ def update_customer_status(customer_id, tax_exempt_status):
   
   response = stripe.Customer.modify(customer_id, tax_exempt=tax_exempt_status) 
   return response
+
+
+def create_tax_invoice(ad_campaign_id):
+  pass
